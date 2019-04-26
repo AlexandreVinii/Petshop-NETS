@@ -27,6 +27,10 @@ $(document).ready(function () {
 
     })
 
+    $('#alterarprodutoid').on('click', function () {
+        redirecionarPaginaAlterar($('#codigoid').val());
+    })
+
 });
 
 function dataParaInput(algumValor) {
@@ -97,9 +101,7 @@ function constroiElementoProdutoForm(produto) {
         $.each($('.produtoNomeView'), function (indexInArray, valueOfElement) {
             valueOfElement = produto.nome;
         });
-        $('#alterarprodutoid').attr('href', window.location.origin + "/produto/alterar/" + produto.codigo);
     }
-
 
 }
 
@@ -151,7 +153,7 @@ function salvaProduto(produto) {
         data: JSON.stringify(produto),
         success: function (response) {
             console.log(response);
-            window.location = window.location.origin + "/produto/" + response.codigo;
+            redirecionarPagina(response.codigo);
         }
     })
 
@@ -169,7 +171,11 @@ function alteraProduto(produto) {
         data: JSON.stringify(produto),
         success: function (response) {
             console.log(response);
-            window.location.replace(window.location.origin + "/produto/" + produto.codigo);
+            redirecionarPagina(produto.codigo);
+            location.href = window.location.origin + "/produto/" + produto.codigo;
+        },
+        complete: function () {
+            location.href = window.location.origin + "/produto/" + produto.codigo;
         }
     })
 }
@@ -203,4 +209,12 @@ function encontraProdutoAlterar(codigo) {
             constroiElementoProdutoForm(response);
         }
     });
+}
+
+function redirecionarPagina(codigo) {
+    window.location.replace(window.location.origin + "/produto/" + codigo)
+}
+
+function redirecionarPaginaAlterar(codigo) {
+    window.location.replace(window.location.origin + "/produto/alterar/" + codigo)
 }
