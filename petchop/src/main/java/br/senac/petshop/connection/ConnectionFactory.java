@@ -14,7 +14,7 @@ public class ConnectionFactory {
 	private static final String URL = "jdbc:mysql://localhost/petchoperp?serverTimezone=UTC";
 
 	private static final String USER = "root";
-	private static final String PASS = "localdbnote";
+	private static final String PASS = "alexandre22";
 
 	public static Connection getConnection() {
 		try {
