@@ -1,9 +1,6 @@
 package br.senac.petshop.controller;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,9 +24,8 @@ public class ProdutoRestController {
 	}
 
 	@RequestMapping("update")
-	public void update(HttpServletResponse response, @RequestBody Produto alterado) throws IOException {
+	public void update(@RequestBody Produto alterado) {
 		prodService.alterar(alterado);
-		response.sendRedirect("/produto/" + alterado.getCodigo());
 	}
 
 	@RequestMapping("name/{nome}")

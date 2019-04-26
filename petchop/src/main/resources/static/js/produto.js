@@ -99,7 +99,7 @@ function constroiElementoProdutoForm(produto) {
 
     if ($('#detalheid').text() != '') {
         $.each($('.produtoNomeView'), function (indexInArray, valueOfElement) {
-            valueOfElement = produto.nome;
+            valueOfElement.innerText = produto.nome;
         });
     }
 
@@ -153,7 +153,9 @@ function salvaProduto(produto) {
         data: JSON.stringify(produto),
         success: function (response) {
             console.log(response);
-            redirecionarPagina(response.codigo);
+        },
+        complete: function (response) {
+            location.href = window.location.origin + "/produto/" + response.responseText;
         }
     })
 
