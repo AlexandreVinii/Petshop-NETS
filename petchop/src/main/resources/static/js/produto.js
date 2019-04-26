@@ -141,6 +141,7 @@ function salvaProduto(produto) {
     })
 
 }
+
 function alteraProduto(produto) {
 
     let getUrl = window.location.origin + "/restproduto/update";
@@ -167,7 +168,6 @@ function encontraProduto(codigo) {
         dataType: "json",
         success: function (response) {
             console.log(response);
-            encontrado = response;
             let prodElement = constroiElementoProduto(response);
             prodElement.appendTo('#produtoVisivel');
         }
@@ -184,7 +184,6 @@ function encontraProdutoAlterar(codigo) {
         dataType: "json",
         success: function (response) {
             console.log(response);
-            encontrado = response;
             constroiElementoProdutoForm(response);
         }
     });
