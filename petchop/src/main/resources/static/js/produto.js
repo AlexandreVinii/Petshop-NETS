@@ -2,6 +2,10 @@ $(document).ready(function () {
 
     $('#dtcadastroid').val(dataParaInput())
 
+    if ($('#codigoid').val() != "" || $('#codigoid').val() != undefined) {
+        encontraProdutoAlterar($('#codigoid').val());
+    }
+
     // Função do submit no formulario de cadastro de produto
     $('#formCadastroProduto').submit(function (event) {
         // cancela o submit normal do form
@@ -22,8 +26,6 @@ $(document).ready(function () {
         alteraProduto(produto);
 
     })
-
-    encontraProdutoAlterar("1556231273419CO");
 
 });
 
@@ -91,6 +93,14 @@ function constroiElementoProdutoForm(produto) {
         template.find('.produto-ativado').prop('checked', true)
     }
 
+    if ($('#detalheid').text() != '') {
+        $.each($('.produtoNomeView'), function (indexInArray, valueOfElement) {
+            valueOfElement = produto.nome;
+        });
+        $('#alterarprodutoid').attr('href', window.location.origin + "/produto/alterar/" + produto.codigo);
+    }
+
+
 }
 
 function constroiJsonProduto(formProduto) {
@@ -105,6 +115,10 @@ function constroiJsonProduto(formProduto) {
         dtCadastro: formProduto.find('#dtcadastroid').val(),
         emEstoque: "",
         desativado: ""
+    }
+
+    if ($('#codigoid').val() != "" || $('#codigoid').val() != undefined) {
+        produto.codigo = $('#codigoid').val();
     }
 
     let estoque = formProduto.find('#estoqueid :input:checked').val();
@@ -137,6 +151,7 @@ function salvaProduto(produto) {
         data: JSON.stringify(produto),
         success: function (response) {
             console.log(response);
+            window.location = window.location.origin + "/produto/" + response.codigo;
         }
     })
 
@@ -154,6 +169,7 @@ function alteraProduto(produto) {
         data: JSON.stringify(produto),
         success: function (response) {
             console.log(response);
+            window.location.replace(window.location.origin + "/produto/" + produto.codigo);
         }
     })
 }
