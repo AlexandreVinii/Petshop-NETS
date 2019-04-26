@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <title>Produto</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-4">
+
+                <h2 class="col-12">Cadastro</h2>
+
+                <form id="formCadastroProduto">
+
+                    <div class="form-group">
+                        <label for="nomeid">Nome</label>
+                        <input type="text" class="form-control" name="produtonome" id="nomeid"
+                            placeholder="Nome do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricaoid">Descrição</label>
+                        <textarea class="form-control" name="produtodescricao" id="descricaoid" cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesoid">Peso</label>
+                        <input type="text" class="form-control" name="produtopeso" id="pesoid"
+                            placeholder="Peso do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="precoid">Preço</label>
+                        <input type="text" class="form-control" name="produtopreco" id="precoid"
+                            placeholder="Preço do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="dtcadastroid">Data de cadastro</label>
+                        <input type="datetime" class="form-control" name="produtodtcadastro" id="dtcadastroid" disabled>
+                    </div>
+
+                    <div class="form-group" id="estoqueid">
+                        <label>Disponibilidade</label><br>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="emestoqueid">
+                                <input class="form-check-input" type="radio" name="produtoemestoque" id="emestoqueid"
+                                    value="1" checked>
+                                Em estoque
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="indisponivelid">
+                                <input class="form-check-input" type="radio" name="produtoemestoque" id="indisponivelid"
+                                    value="0"> Não disponivel
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="statusid">
+                        <label>Status</label><br>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="ativadoid">
+                                <input class="form-check-input" type="radio" name="produtodesativado" id="ativadoid"
+                                    value="0" checked>
+                                Ativado
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="desativadoid">
+                                <input class="form-check-input" type="radio" name="produtodesativado" id="desativadoid"
+                                    value="1"> Desativado
+                            </label>
+                        </div>
+                    </div>
+
+                    <button form="formCadastroProduto" type="submit" class="btn btn-primary">Cadastrar</button>
+
+                </form>
+
+            </div>
+
+            <div class="col-4">
+
+                <h2 class="col-12">Produto</h2>
+
+                <div id="produtoTemplate" style="display:none">
+                    <div class="col-12 produto-codigo"></div>
+                    <div class="col-12 produto-nome"></div>
+                    <div class="col-12 produto-descricao"></div>
+                    <div class="col-12 produto-peso"></div>
+                    <div class="col-12 produto-preco"></div>
+                    <div class="col-12 produto-dtcadastro"></div>
+                    <div class="col-12 produto-emestoque"></div>
+                    <div class="col-12 produto-desativado"></div>
+                </div>
+
+                <div class="row" id="produtoVisivel">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="col-4">
+
+                <h2 class="col-12">Alterar</h2>
+
+                <form id="formProdutoAlterar">
+
+                    <div class="form-group">
+                        <label for="nomeid">Nome</label>
+                        <input type="text" class="form-control produto-nome" name="produtonome" id="nomeid"
+                            placeholder="Nome do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="descricaoid">Descrição</label>
+                        <textarea class="form-control produto-descricao" name="produtodescricao" id="descricaoid" cols="30"
+                            rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pesoid">Peso</label>
+                        <input type="text" class="form-control produto-peso" name="produtopeso" id="pesoid"
+                            placeholder="Peso do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="precoid">Preço</label>
+                        <input type="text" class="form-control produto-preco" name="produtopreco" id="precoid"
+                            placeholder="Preço do produto">
+                    </div>
+                    <div class="form-group">
+                        <label for="dtcadastroid">Data de cadastro</label>
+                        <input type="datetime" class="form-control produto-dtcadastro" name="produtodtcadastro" id="dtcadastroid" disabled>
+                    </div>
+
+                    <div class="form-group" id="estoqueid">
+                        <label>Disponibilidade</label><br>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="emestoqueid">
+                                <input class="form-check-input produto-emestoque" type="radio" name="produtoemestoque" id="emestoqueid"
+                                    value="1" checked>
+                                Em estoque
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="indisponivelid">
+                                <input class="form-check-input produto-naodisponivel" type="radio" name="produtoemestoque" id="indisponivelid"
+                                    value="0"> Não disponivel
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="statusid">
+                        <label>Status</label><br>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="ativadoid">
+                                <input class="form-check-input produto-ativado" type="radio" name="produtodesativado" id="ativadoid"
+                                    value="0" checked>
+                                Ativado
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="desativadoid">
+                                <input class="form-check-input produto-desativado" type="radio" name="produtodesativado" id="desativadoid"
+                                    value="1"> Desativado
+                            </label>
+                        </div>
+                    </div>
+
+                    <button form="formProdutoAlterar" type="submit" class="btn btn-primary">Cadastrar</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="../static/js/main.js" th:src="@{/js/main.js}">
+    </script>
+    <script src=" ../static/js/produto.js" th:src="@{/js/produto.js}">
+    </script>
+</body>
+
+</html>
