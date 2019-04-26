@@ -141,12 +141,11 @@
                             <li><a href=""><i class="fa fa-files-o"></i>Buscar Produtos</a></li>
                             <li>
                                 <a href="produtoCadastro.html" th:href="@{/produto/cadastro}">
-                                    <a href="produtoCadastro.html" th:href="@{/produto/cadastro}">
-                                        <i class="fa fa-edit"></i> Cadastrar Produtos
-                                        <span class="pull-right-container">
-                                            <small class="label pull-right bg-primary">ADD</small>
-                                        </span>
-                                    </a>
+                                    <i class="fa fa-edit"></i> Cadastrar Produtos
+                                    <span class="pull-right-container">
+                                        <small class="label pull-right bg-primary">ADD</small>
+                                    </span>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -362,7 +361,8 @@
                                     <div class="form-check form-check-inline">
                                         <label class="form-check-label" for="indisponivelid">
                                             <input class="form-check-input produto-indisponivel" type="radio"
-                                                name="produtoemestoque" id="indisponivelid" value="0" disabled> Não disponivel
+                                                name="produtoemestoque" id="indisponivelid" value="0" disabled> Não
+                                            disponivel
                                         </label>
                                     </div>
                                 </div>
@@ -379,7 +379,8 @@
                                     <div class="form-check form-check-inline">
                                         <label class="form-check-label" for="desativadoid">
                                             <input class="form-check-input produto-desativado" type="radio"
-                                                name="produtodesativado" id="desativadoid" value="1" disabled> Desativado
+                                                name="produtodesativado" id="desativadoid" value="1" disabled>
+                                            Desativado
                                         </label>
                                     </div>
                                 </div>
@@ -389,8 +390,10 @@
 
                         </div>
                         <div class="box-footer text-right">
-                            <button form="formProdutoAlterar" type="submit" class="btn btn-success" style="display:none">Alterar</button>
-                            <a name="alterarLink" id="alterarprodutoid" class="btn btn-primary" role="button">Alterar</a>
+                            <button form="formProdutoAlterar" type="submit" class="btn btn-success"
+                                style="display:none">Alterar</button>
+                            <a name="alterarLink" id="alterarprodutoid" class="btn btn-primary"
+                                role="button">Alterar</a>
                         </div>
                     </form>
                 </div>
@@ -420,31 +423,31 @@
     </script>
 
     <script src="../static/bower_components/jquery/dist/jquery.min.js"
-        th:src="@{../static/bower_components/jquery/dist/jquery.min.js}"></script>
+        th:src="@{/bower_components/jquery/dist/jquery.min.js}"></script>
     <script src="../static/bower_components/bootstrap/dist/js/bootstrap.min.js"
-        th:src="@{../static/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
+        th:src="@{/bower_components/bootstrap/dist/js/bootstrap.min.js}"></script>
     <script src="../static/bower_components/fastclick/lib/fastclick.js"
-        th:src="@{../static/bower_components/fastclick/lib/fastclick.js}"></script>
-    <script src="../static/dist/js/adminlte.min.js" th:src="@{../static/dist/js/adminlte.min.js}"></script>
-    <script src="../static/dist/js/jquery.inputmask.bundle.js" th:src="@{../static/dist/js/jquery.inputmask.bundle.js}">
+        th:src="@{/bower_components/fastclick/lib/fastclick.js}"></script>
+    <script src="../static/dist/js/adminlte.min.js" th:src="@{/dist/js/adminlte.min.js}"></script>
+    <script src="../static/dist/js/jquery.inputmask.bundle.js" th:src="@{/dist/js/jquery.inputmask.bundle.js}">
     </script>
     <script src="../static/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"
-        th:src="@{../static/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js}"></script>
+        th:src="@{/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js}"></script>
     <script src="../static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"
-        th:src="@{../static/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
+        th:src="@{/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js}"></script>
     <script src="../static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"
-        th:src="@{../static/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
+        th:src="@{/plugins/jvectormap/jquery-jvectormap-world-mill-en.js}"></script>
     <script src="../static/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"
-        th:src="@{../static/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}"></script>
-    <script src="../static/bower_components/chart.js/Chart.js" th:src="@{../static/bower_components/chart.js/Chart.js}">
+        th:src="@{/bower_components/jquery-slimscroll/jquery.slimscroll.min.js}"></script>
+    <script src="../static/bower_components/chart.js/Chart.js" th:src="@{/bower_components/chart.js/Chart.js}">
     </script>
-    <script src="../static/dist/js/pages/dashboard2.js" th:src="@{../static/dist/js/pages/dashboard2.js}"></script>
-    <script src="../static/dist/js/demo.js" th:src="@{../static/dist/js/demo.js}"></script>
+    <script src="../static/dist/js/pages/dashboard2.js" th:src="@{/dist/js/pages/dashboard2.js}"></script>
+    <script src="../static/dist/js/demo.js" th:src="@{/dist/js/demo.js}"></script>
 
 
     <!-- jQuery UI 1.11.4 -->
     <script src="../static/bower_components/jquery-ui/jquery-ui.min.js"
-        th:src="@{../static/bower_components/jquery-ui/jquery-ui.min.js}"></script>
+        th:src="@{/bower_components/jquery-ui/jquery-ui.min.js}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
@@ -453,9 +456,10 @@
 
     <!-- DataTables -->
     <script src="../static/bower_components/datatables.net/js/jquery.dataTables.min.js"
-        th:src="@{../static/bower_components/datatables.net/js/jquery.dataTables.min.js}"></script>
+        th:src="@{/bower_components/datatables.net/js/jquery.dataTables.min.js}"></script>
     <script src="../static/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"
-        th:src="@{../static/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+        th:src="@{/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+
 
 </body>
 
